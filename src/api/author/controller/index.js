@@ -3,7 +3,6 @@ import { indexAuthorsUseCase } from '../useCases/indexAuthorUseCase.js'
 import { showAuthorUseCase } from '../useCases/showAuthorUseCase.js'
 import { updateAuthorUseCase } from '../useCases/updateAuthorUseCase.js'
 import { deleteAuthorUseCase } from '../useCases/deleteAuthorUseCase.js'
-import { middleware as body } from 'bodymen'
 
 export const create = async ({ body }, res) => {
   const response = await createAuthorUseCase(body)
