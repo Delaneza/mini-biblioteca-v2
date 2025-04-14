@@ -4,19 +4,14 @@ import Book from '../model/model.js'
 
 export const createBookUseCase = async (body) => {
   const { author_id } = body
-  if (!author_id) {
-    throw new AppError('Author id is required!', 400)
-  }
+  if (!author_id) throw new AppError('Author id is required!', 400)
 
-  try {
-    const result = await Book.create(body)
-    return result
-  } catch (err) {
-    const existingAuthor = await Author.findOne({
-      where: { id: author_id },
-    })
-    if (!existingAuthor) {
-      throw new AppError(`Author id ${author_id} not found.`, 404)
-    }
-  }
+  const author = await Author.findOne({
+    where: { id: author_id },
+  })
+
+  if (!author) throw new AppError(`Author id ${author_id} not found.`, 404)
+
+  const result = await Book.create(body)
+  return result
 }
