@@ -1,0 +1,26 @@
+{
+  "name": "mini-biblioteca-v2",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bodymen": "^1.1.1",
+    "dotenv": "^16.5.0",
+    "eslint": "^9.24.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "nodemon": "^3.1.9",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
